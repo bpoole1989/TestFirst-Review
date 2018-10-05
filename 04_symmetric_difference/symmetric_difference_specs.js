@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 /* eslint-disable no-undef */
 describe('symmetric difference', () => {
   describe('difference', () => {

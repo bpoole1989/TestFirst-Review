@@ -1,3 +1,6 @@
+/* eslint-env jasmine */
+/* eslint-disable no-undef */
+
 describe('call all', () => {
   it('takes an object and an array and returns an array', () => {
     let result = callAll({}, [function() {}]);

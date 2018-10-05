@@ -1,3 +1,6 @@
+/* eslint-env jasmine */
+/* eslint-disable no-undef */
+
 describe('pigify', () => {
   it('translates a word beginning with a vowel', () => {
     const pigLatinString = pigify('apple');

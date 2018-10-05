@@ -1,3 +1,6 @@
+/* eslint-env jasmine */
+/* eslint-disable no-undef */
+
 describe('sometimes', () => {
   let myFunc;
   let add = (a, b) => {

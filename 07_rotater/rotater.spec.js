@@ -1,3 +1,6 @@
+/* eslint-env jasmine */
+/* eslint-disable no-undef */
+
 describe('rotater', () => {
   it('takes a string and returns a function', () => {
     const result = rotater('');

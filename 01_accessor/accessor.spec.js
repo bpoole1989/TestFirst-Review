@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 /* eslint-disable no-undef */
 describe('accessor', () => {
   it('takes an object and returns a function', () => {
