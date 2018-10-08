@@ -7,7 +7,7 @@ describe('doNotInclude', () => {
   });
   it('returns an array', () => {
     expect(Array.isArray([1, 2, 3, 4].doNotInclude(3))).toBe(true);
-    expect(Array.isArray([1, 2, 3, 4]).doNotInclude([0, 2])).toBe(true);
+    expect(Array.isArray([1, 2, 3, 4].doNotInclude([0, 2]))).toBe(true);
   });
   it('does not include the index values from the array passed to `doNotInclude`', () => {
     expect([1, 2, 3, 4, 5].doNotInclude([3, 4])).toEqual([1, 2, 3]);
