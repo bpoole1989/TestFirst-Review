@@ -4,7 +4,7 @@
 describe('call all', () => {
   it('takes an object and an array and returns an array', () => {
     let result = callAll({}, [function() {}]);
-    expect(result).toEqual(jasmine.any(Array));
+    expect(Array.isArray(result)).toBe(true);
   });
 
   it('calls all of the functions in the array', () => {
