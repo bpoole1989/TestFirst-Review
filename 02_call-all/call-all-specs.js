@@ -9,12 +9,17 @@ describe('call all', () => {
 
   it('calls all of the functions in the array', () => {
     /* NOTE: jasmine.creteSpy() creates a function, it is similar to
-			var fnArr = [function one() {return 1},
-						 function two() {return 2}
-						];
-		*/
+       let fnArr = [function one() {return 1},
+                    function two() {return 2}
+		    ];
+       Since the functions below were created using `jasmine.createSpy()`, they have access to additional
+       properties for testing purposes thanks to jasmine :). 
+       
+       In the test specs below, `.calls.count()` is called on the functions created by `jasmine.createSpy()`, 
+       this enables the ability to track how many times a function is called.
+    */
 
-    var fnArr = [
+    let fnArr = [
       jasmine.createSpy(), // first function
       jasmine.createSpy(), // second function
     ];
@@ -44,7 +49,7 @@ describe('call all', () => {
     expect(obj.lose).toEqual(false);
   });
 
-  it("returns an array of each function's results, in order with strings", () => {
+  it("returns an array of each functions return values", () => {
     const fnArr = [
       function firstName() {
         return this.first;
@@ -60,7 +65,7 @@ describe('call all', () => {
     expect(result).toEqual(['Nimit', 'Maru']);
   });
 
-  it("returns an array of each function's results, in order with numbers", () => {
+  it("returns an array of each functions return value", () => {
     const fnArr = [
       function() {
         return this.a + this.b;
