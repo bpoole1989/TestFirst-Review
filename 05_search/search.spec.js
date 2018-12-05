@@ -8,7 +8,10 @@ describe('search', () => {
     expect(typeof result === 'boolean').toBe(true);
   });
 
-  it('uses the given matching function to find an element in the contextual array', () => {
+  it('uses the provided matching function to find an element in the contextual array', () => {
+    
+    // Note: the matching function is the function argument
+	  
     const arr = ['yellow', 13, {}, 'something else'];
     let result;
 
