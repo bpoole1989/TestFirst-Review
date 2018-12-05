@@ -5,7 +5,7 @@ describe('search', () => {
   it('operates on an array, takes a function and returns a boolean', () => {
     // Note: Notice that `search` is invoked with .call, the context object is an array.
     const result = search.call([], function() {});
-    expect(result).toEqual(jasmine.any(Boolean));
+    expect(typeof result === 'boolean').toBe(true);
   });
 
   it('uses the given matching function to find an element in the contextual array', () => {
