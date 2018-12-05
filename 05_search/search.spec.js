@@ -26,7 +26,7 @@ describe('search', () => {
     expect(result).toEqual(false); // arr does not contain a function
   });
 
-  it('looks into any nested arrays', () => {
+  it('tests values inside nested arrays', () => {
     let arr;
     let result;
 
