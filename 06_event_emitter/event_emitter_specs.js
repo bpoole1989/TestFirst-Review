@@ -24,7 +24,7 @@ describe('MyEventEmitter Class', () => {
     expect(typeof MyEventEmitter.prototype.emit).toBe('function');
   });
 
-  it('stores an "event" and a callback function in an Array', () => {
+  it('stores an "event" and a callback function in an array', () => {
     eventEmitter.addListener('greet', name => {
       return 'Hello, ' + name + '!';
     });
