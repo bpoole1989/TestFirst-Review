@@ -1,5 +1,1 @@
-function callAll(obj, arr) {
-  return arr.map(function(fn) {
-    return fn.call(obj);
-  });
-}
+/* eslint-disable no-unused-vars */
