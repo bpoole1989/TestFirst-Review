@@ -7,7 +7,7 @@ describe('rotater', () => {
     expect(typeof result).toBe('function');
   });
 
-  it('the function it returns takes a number and returns a string', () => {
+  it('the function takes a number and returns a string', () => {
     const rotate = rotater('');
     const result = rotate(0);
     expect(typeof result).toBe('string');
