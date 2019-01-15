@@ -6,7 +6,7 @@ Symmetric Difference is the difference between two sets.
 symmetricDiff(A, B, C);
 // Translates to:
 
- symmetricDiff(symmetricDiff(A,B),C);
+symmetricDiff(symmetricDiff(A,B),C);
 
 ```
 
