@@ -34,7 +34,7 @@ describe('sometimes', () => {
     expect(outputArr).toEqual([7, 9, 11, 'I do not know!']);
   });
 
-  it("each consecutive odd call returns add's expected output", () => {
+  it("each consecutive odd call returns the function's (the function passed to sometimes) return value", () => {
     const outputArr = [];
     let iDoNotk = 'I do not know!';
 

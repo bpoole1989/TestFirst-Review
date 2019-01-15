@@ -24,7 +24,7 @@ describe('MyEventEmitter Class', () => {
     expect(typeof MyEventEmitter.prototype.emit).toBe('function');
   });
 
-  it('stores an "event" and a callback function in an Array', () => {
+  it('stores an "event" and a callback function in an array', () => {
     eventEmitter.addListener('greet', name => {
       return 'Hello, ' + name + '!';
     });
@@ -67,9 +67,14 @@ describe('MyEventEmitter Class', () => {
     expect(Object.keys(eventEmitter.events)).toEqual(['greet', 'bye', 'shout']);
   });
 
-  it("the 'emit' property invokes the event listener for the specified event", () => {
+  it("the 'emit' method invokes the event listener for the specified event", () => {
+    /* Note: 
+      the addListener method creates or adds functions to an event
+      the emit method runs all the functions that are assigned to an event
+    */
     let greetingString;
     let byeString;
+
     eventEmitter.addListener('greet', name => {
       greetingString = 'Hello, ' + name + '!';
     });
@@ -85,7 +90,19 @@ describe('MyEventEmitter Class', () => {
     expect(byeString).toBe('Bye, Emily!');
   });
 
-  it("the emit function invokes each callback's apply method", () => {
+  it("the emit method invokes every event's associated functions with the apply method", () => {
+    /* 
+    Note:
+      - Every event on the `events` property is assigned an array that holds functions to execute when the `emit` function
+      calls the event. Every function in the events array is invoked with the `apply` method.
+      
+      The main reason `apply` is used is to leverage the second argument passed to `apply` 
+      (the array that holds arguments that are passed (in order) to the function apply is called on). 
+      You don't need to set a specific context of "this" when using apply in these spec 
+      (first argument to `apply` assigns the context of "this" in the function apply is called on, you can pass it
+      an empty object or the value null). e.g.  example.apply(null, ['firstArgument', 'secondArgument])
+    */
+
     const callback = name => {
       return 'Hello, ' + name + '!';
     };
@@ -94,12 +111,19 @@ describe('MyEventEmitter Class', () => {
 
     eventEmitter.addListener('greet', callback);
 
-    eventEmitter.emit('greet', ['Scott']);
+    eventEmitter.emit('greet', 'Scott');
 
     expect(callback.apply).toHaveBeenCalled();
   });
 
-  it('the "emit" property invokes all callback functions for the specified event', () => {
+  it('the "emit" method invokes every callback function for the specified event', () => {
+    /* Note:
+    
+    - Review how rest parameters work: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+     - Rest parameters can be useful when you don't know how many arguments will be passed to a function.
+    
+     */
+
     const values = [];
     const name = (name, name2) => {
       values.push('Hello, ' + name + '!' + ' My name is ' + name2 + '.');

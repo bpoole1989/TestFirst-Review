@@ -4,7 +4,7 @@
 describe('search', () => {
   it('operates on an array, takes a function and returns a boolean', () => {
     const result = search.call([], function() {});
-    expect(result).toEqual(jasmine.any(Boolean));
+    expect(typeof result === 'boolean').toBe(true);
   });
 
   it('uses the given matching function to find an element in the contextual array', () => {
@@ -22,7 +22,7 @@ describe('search', () => {
     expect(result).toEqual(false); // arr does not contain a function
   });
 
-  it('looks into any nested arrays', () => {
+  it('tests values inside nested arrays', () => {
     let arr;
     let result;
 
@@ -53,9 +53,9 @@ describe('search', () => {
   });
 
   it('is recursive', () => {
-		// this checks that search is invoked with .call or .apply
-		// this makes it recursive because the function is called within
-		// its code block.
+    // this checks that search is invoked with .call or .apply
+    // this makes it recursive because the function is called within
+    // its code block.
     expect(search.toString()).toMatch(/search.(call|apply)/);
   });
 });
