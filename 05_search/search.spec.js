@@ -3,11 +3,15 @@
 
 describe('search', () => {
   it('operates on an array, takes a function and returns a boolean', () => {
+    // Note: Notice that `search` is invoked with .call, the context object is an array.
     const result = search.call([], function() {});
     expect(typeof result === 'boolean').toBe(true);
   });
 
-  it('uses the given matching function to find an element in the contextual array', () => {
+  it('uses the provided matching function to find an element in the contextual array', () => {
+    
+    // Note: the matching function is the function argument
+	  
     const arr = ['yellow', 13, {}, 'something else'];
     let result;
 

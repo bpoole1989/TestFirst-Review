@@ -117,6 +117,7 @@ describe('MyEventEmitter Class', () => {
   });
 
   it('the "emit" method invokes every callback function for the specified event', () => {
+
     /* Note:
     
     - Review how rest parameters work: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
