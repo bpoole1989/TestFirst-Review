@@ -2,7 +2,7 @@
 
 Create a function, which returns an array of functions. Each function returns their index in the array.  Here is an example:
 
-```
+```js
 var arrayOfFunctions = createFunctions(5); // create an array, containing 5 functions
 
 arrayOfFunctions[0](); // must return 0
