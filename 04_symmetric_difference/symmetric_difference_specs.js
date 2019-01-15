@@ -14,7 +14,7 @@ describe('symmetric difference', () => {
       ]);
     });
 
-    it('returns the unique index for non-integer values', () => {
+    it('returns the unique index values for non-integer values', () => {
       expect(
         difference(['hello', 'world', 'bye'], ['full', 'stack', 'world', 'bye'])
       ).toEqual(['hello']);
