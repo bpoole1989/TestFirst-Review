@@ -24,7 +24,7 @@ describe('makeIterator', () => {
     const secondCallToGetIndex = iterator.getIndex();
     // these expectations demonstrate that .getIndex() doesn't increment the value it returns, it has access to the value but doesn't change it
     expect(firstCallToGetIndex).toBe(0);
-    expect(firstCallToGetIndex).toBe(0);
+    expect(secondCallToGetIndex).toBe(0);
 
     iterator.getNext(); // Note: it is significant that iterator.getNext() is called, it changes the value iterator.getIndex() returns
 
