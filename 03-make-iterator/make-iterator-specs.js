@@ -1,3 +1,6 @@
+/* eslint-env jasmine */
+/* eslint-disable no-undef */
+
 describe('makeIterator', () => {
   it('is a function', () => {
     expect(typeof makeIterator).toBe('function');

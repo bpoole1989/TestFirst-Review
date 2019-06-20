@@ -1,6 +1,8 @@
-### 07: `rotater`
+## Rotater
 
-*Return a function that can "rotate" the given string.*
+Return a function that can "rotate" the given string
+
+### Topics:
 
 - working with strings
 - higher order functions
