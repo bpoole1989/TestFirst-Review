@@ -1,5 +1,8 @@
 // USE ES2015 CLASS SYNTAX
 
+/* eslint-env jasmine */
+/* eslint-disable no-undef */
+
 describe('Vehicle Class', () => {
   let vehicle;
 

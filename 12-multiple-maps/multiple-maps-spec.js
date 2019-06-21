@@ -1,3 +1,6 @@
+/* eslint-env jasmine */
+/* eslint-disable no-undef */
+
 describe('multipleMaps', () => {
   it('multipleMaps is a function', () => {
     expect(typeof multipleMaps).toBe('function');
